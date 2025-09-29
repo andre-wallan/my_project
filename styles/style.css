@@ -42,10 +42,10 @@ ul {
   --gold: #FFD700;
   --white: #FFFFFF;
   --gray: #F5F5F5;
-  --dark-gray: #666;
+  --dark-gray: #272727;
   --light-navy: #3949AB;
-  --hover-gold: #FFC400;
-  --text-dark: #333;
+  --hover-gold: hsl(59, 100%, 51%);
+  --text-dark: #080000;
   --border-color: #E0E0E0;
 }
 
@@ -247,7 +247,7 @@ main {
 }
 
 .news-date {
-  color: var(--gold);
+  color: var(--black);
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
