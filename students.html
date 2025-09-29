@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Portal - View academic records and report cards">
+  <title>Excellence Academy | Students</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Excellence Academy</h1>
+        <p class="tagline">Nurturing Future Leaders</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="students.html" class="active">Students</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h2>Student Report Cards</h2>
+      <p>Academic performance records for Term 3, 2025</p>
+    </section>
+
+    <section class="students-section">
+      <div class="table-controls">
+        <div class="search-box">
+          <input type="text" placeholder="Search by student name..." aria-label="Search students">
+        </div>
+        <div class="filter-box">
+          <select aria-label="Filter by grade">
+            <option value="">All Grades</option>
+            <option value="grade-10">Grade 10</option>
+            <option value="grade-11">Grade 11</option>
+            <option value="grade-12">Grade 12</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="students-table">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Name</th>
+              <th>Grade</th>
+              <th>Mathematics</th>
+              <th>English</th>
+              <th>Science</th>
+              <th>History</th>
+              <th>Average</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Student ID">STD001</td>
+              <td data-label="Name">John Mukasa</td>
+              <td data-label="Grade">10</td>
+              <td data-label="Mathematics">85</td>
+              <td data-label="English">78</td>
+              <td data-label="Science">92</td>
+              <td data-label="History">88</td>
+              <td data-label="Average" class="average">85.8</td>
+              <td data-label="Status"><span class="status excellent">Excellent</span></td>
+            </tr>
+            <tr>
+              <td data-label="Student ID">STD002</td>
+              <td data-label="Name">Sarah Nakato</td>
+              <td data-label="Grade">11</td>
+              <td data-label="Mathematics">92</td>
+              <td data-label="English">95</td>
+              <td data-label="Science">89</td>
+              <td data-label="History">91</td>
+              <td data-label="Average" class="average">91.8</td>
+              <td data-label="Status"><span class="status excellent">Excellent</span></td>
+            </tr>
+            <tr>
+              <td data-label="Student ID">STD003</td>
+              <td data-label="Name">David Okello</td>
+              <td data-label="Grade">10</td>
+              <td data-label="Mathematics">76</td>
+              <td data-label="English">82</td>
+              <td data-label="Science">79</td>
+              <td data-label="History">75</td>
+              <td data-label="Average" class="average">78.0</td>
+              <td data-label="Status"><span class="status good">Good</span></td>
+            </tr>
+            <tr>
+              <td data-label="Student ID">STD004</td>
+              <td data-label="Name">Grace Namusoke</td>
+              <td data-label="Grade">12</td>
+              <td data-label="Mathematics">88</td>
+              <td data-label="English">86</td>
+              <td data-label="Science">90</td>
+              <td data-label="History">84</td>
+              <td data-label="Average" class="average">87.0</td>
+              <td data-label="Status"><span class="status excellent">Excellent</span></td>
+            </tr>
+            <tr>
+              <td data-label="Student ID">STD005</td>
+              <td data-label="Name">Peter Ssemwanga</td>
+              <td data-label="Grade">11</td>
+              <td data-label="Mathematics">72</td>
+              <td data-label="English">68</td>
+              <td data-label="Science">75</td>
+              <td data-label="History">70</td>
+              <td data-label="Average" class="average">71.3</td>
+              <td data-label="Status"><span class="status average">Average</span></td>
+            </tr>
+            <tr>
+              <td data-label="Student ID">STD006</td>
+              <td data-label="Name">Mary Auma</td>
+              <td data-label="Grade">10</td>
+              <td data-label="Mathematics">95</td>
+              <td data-label="English">92</td>
+              <td data-label="Science">96</td>
+              <td data-label="History">93</td>
+              <td data-label="Average" class="average">94.0</td>
+              <td data-label="Status"><span class="status excellent">Excellent</span></td>
+            </tr>
+            <tr>
+              <td data-label="Student ID">STD007</td>
+              <td data-label="Name">James Kiprotich</td>
+              <td data-label="Grade">12</td>
+              <td data-label="Mathematics">81</td>
+              <td data-label="English">79</td>
+              <td data-label="Science">84</td>
+              <td data-label="History">82</td>
+              <td data-label="Average" class="average">81.5</td>
+              <td data-label="Status"><span class="status good">Good</span></td>
+            </tr>
+            <tr>
+              <td data-label="Student ID">STD008</td>
+              <td data-label="Name">Rebecca Nambi</td>
+              <td data-label="Grade">11</td>
+              <td data-label="Mathematics">87</td>
+              <td data-label="English">90</td>
+              <td data-label="Science">85</td>
+              <td data-label="History">89</td>
+              <td data-label="Average" class="average">87.8</td>
+              <td data-label="Status"><span class="status excellent">Excellent</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-info">
+        <p>Showing 8 of 8 students</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Excellence Academy</h3>
+        <p>Committed to providing quality education and fostering excellence in every student.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="students.html">Students</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>123 Education Street</p>
+        <p>Kampala, Uganda</p>
+        <p>Phone: +256 123 456 789</p>
+        <p>Email: info@excellenceacademy.edu</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Excellence Academy. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
