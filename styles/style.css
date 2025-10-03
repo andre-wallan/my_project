@@ -15,7 +15,7 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #0c0000;
   background-color: #F5F5F5;
 }
 
@@ -42,7 +42,7 @@ ul {
   --gold: #FFD700;
   --white: #FFFFFF;
   --gray: #F5F5F5;
-  --dark-gray: #272727;
+  --dark-gray: #080000;
   --light-navy: #3949AB;
   --hover-gold: hsl(59, 100%, 51%);
   --text-dark: #080000;
@@ -106,7 +106,7 @@ header {
 
 .tagline {
   font-size: 0.9rem;
-  color: var(--gold);
+  color: var(--white);
   font-weight: 400;
   margin: 0;
 }
@@ -271,7 +271,7 @@ main {
 }
 
 .read-more:hover {
-  color: var(--gold);
+  color: var(--light-navy);
 }
 
 /* ===================================
@@ -654,7 +654,7 @@ footer {
 }
 
 .footer-section p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--black);
   line-height: 1.8;
   margin-bottom: 0.5rem;
 }
@@ -668,7 +668,7 @@ footer {
 }
 
 .footer-section ul li a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.966);
   transition: color 0.3s ease;
 }
 
@@ -685,7 +685,7 @@ footer {
 }
 
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.959);
   margin: 0;
 }
 
