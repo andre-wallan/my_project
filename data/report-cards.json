@@ -1,0 +1,7 @@
+[
+  { "name": "John Mukasa", "grade": "10", "average": 85.8, "status": "Excellent" },
+  { "name": "Sarah Nakato", "grade": "11", "average": 91.8, "status": "Excellent" },
+  { "name": "David Okello", "grade": "10", "average": 78.0, "status": "Good" },
+  { "name": "Grace Namusoke", "grade": "12", "average": 87.0, "status": "Excellent" },
+  { "name": "Peter Ssemwanga", "grade": "11", "average": 71.3, "status": "Average" }
+]
