@@ -4,7 +4,13 @@ import { buildAttendanceChart } from './attendanceChart.mjs';
 async function fetchNews() {
   const container = document.getElementById('newsContainer');
   try {
-    const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=education&apiKey=YOUR_NEWSAPI_KEY`);
+    const res = await fetch('https://graph.microsoft.com/v1.0/resource?query-parameters', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+        'Content-Type': 'application/json'
+      }
+    });
     if (!res.ok) throw new Error("Failed to fetch news");
     const data = await res.json();
     container.innerHTML = data.articles.slice(0, 4).map(a => `
@@ -35,11 +41,11 @@ async function fetchQuote() {
 // Initialize Google Map
 window.initMap = function() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 0.3476, lng: 32.5825 },
+    center: { lat: -1.2486, lng: 29.9896  },
     zoom: 13,
   });
   new google.maps.Marker({
-    position: { lat: 0.3476, lng: 32.5825 },
+    position: { lat: -1.2486, lng: 29.9896  },
     map,
     title: "Vocational School Uganda",
   });
