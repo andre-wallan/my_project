@@ -1,6 +1,5 @@
 export function renderAttendanceChart(canvasId, data) {
-  const ctx = document.getElementById(canvasId);
-  new Chart(ctx, {
+  new Chart(document.getElementById(canvasId), {
     type: 'bar',
     data: {
       labels: data.labels,
@@ -9,6 +8,6 @@ export function renderAttendanceChart(canvasId, data) {
         { label: 'Absent', data: data.absent }
       ]
     },
-    options: { responsive: true }
+    options: { responsive: true, maintainAspectRatio: false }
   });
 }
