@@ -1,85 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vocational School Portal</title>
-  <meta name="description" content="Welcome to the Vocational School Portal. Track student progress, attendance, and stay updated with the latest news." />
-  <meta name="author" content="Your Name" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="js/main.js" defer></script>
 </head>
+
 <body>
   <header>
-    <h1>Vocational School Portal</h1>
     <nav>
+      <img src="assets/logo.png" alt="Vocational School Logo" class="logo" />
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="report.html">Report Cards</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="reportSection">
-      <h2>Report Cards</h2>
-      <div id="reportCards"></div>
-    </section>
-
-    <section id="attendanceSection">
-      <h2>Attendance Overview</h2>
-      <canvas id="attendanceCanvas" width="800" height="300" aria-label="Attendance chart"></canvas>
-    </section>
-
-    <section id="newsSection">
+    <!-- NEWS SECTION -->
+    <section id="news">
       <h2>Latest Educational News</h2>
-      <div id="newsFeed"></div>
+      <div id="newsContainer" class="card-grid" aria-live="polite"></div>
     </section>
 
-    <section id="quoteSection">
+    <!-- QUOTES -->
+    <section id="motivation">
       <h2>Daily Motivation</h2>
-      <div id="dailyQuote"></div>
+      <blockquote id="quote" class="quote"></blockquote>
     </section>
 
-    <section id="mapSection">
-      <h2>Find Us</h2>
-      <div id="map" style="height:320px;"></div>
+    <!-- ATTENDANCE CHART -->
+    <section id="attendance">
+      <h2>Weekly Attendance</h2>
+      <canvas id="attendanceChart" aria-label="Attendance Chart"></canvas>
+    </section>
+
+    <!-- MAP -->
+    <section id="location">
+      <h2>Our Location</h2>
+      <div id="map"></div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Vocational School | All rights reserved</p>
+    <p>&copy; 2025 Vocational School | Designed by Andrew Allan Ssemanda</p>
   </footer>
 
-  <!-- Google Maps -->
-  <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initSchoolMap"></script>
-
-  <script type="module">
-    import { fetchAndRenderReportCards } from './js/reportCards.mjs';
-    import { renderAttendanceChart } from './js/attendanceChart.mjs';
-    import { loadAndDisplayNews, displayDailyQuote } from './js/homeData.mjs';
-    import { initMap } from './js/maps.js';
-
-    // Report Cards
-    fetchAndRenderReportCards('reportCards', 'data/report-cards.json');
-
-    // Attendance Chart
-    const attendanceData = {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-      present: [120, 118, 121, 119, 122],
-      absent: [3, 5, 2, 4, 3]
-    };
-    renderAttendanceChart('attendanceCanvas', attendanceData);
-
-    // News + Quote
-    loadAndDisplayNews('newsFeed', { country: 'ug', pageSize: 5 });
-    displayDailyQuote('dailyQuote');
-
-    // Google Map callback
-    window.initSchoolMap = function() {
-      initMap('map', { lat: 0.3476, lng: 32.5825, zoom: 15, title: 'Our School' });
-    };
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

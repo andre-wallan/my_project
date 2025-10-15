@@ -1,53 +1,50 @@
 import { buildAttendanceChart } from './attendanceChart.mjs';
 
-// Fetch News
+// Fetch news articles
 async function fetchNews() {
   const container = document.getElementById('newsContainer');
   try {
-    const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=education&apiKey=YOUR_API_KEY`);
+    const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=education&apiKey=YOUR_NEWSAPI_KEY`);
     if (!res.ok) throw new Error("Failed to fetch news");
     const data = await res.json();
-
-    container.innerHTML = data.articles.slice(0, 4).map(article => `
+    container.innerHTML = data.articles.slice(0, 4).map(a => `
       <div class="card">
-        <img src="${article.urlToImage || 'assets/default.jpg'}" alt="${article.title}">
-        <h3>${article.title}</h3>
-        <p>${article.description || ''}</p>
-        <a href="${article.url}" target="_blank">Read more</a>
+        <img src="${a.urlToImage || 'assets/default.jpg'}" alt="${a.title}">
+        <h3>${a.title}</h3>
+        <p>${a.description || ''}</p>
+        <a href="${a.url}" target="_blank">Read more</a>
       </div>
     `).join('');
   } catch (err) {
-    container.innerHTML = `<p class="error">Could not load news at this time. Please try again later.</p>`;
+    container.innerHTML = `<p class="error">⚠️ Could not load news. Please try again later.</p>`;
   }
 }
 
-// Fetch Motivational Quote
+// Fetch motivational quote
 async function fetchQuote() {
-  const quoteElement = document.getElementById('quote');
+  const quote = document.getElementById('quote');
   try {
     const res = await fetch('https://api.quotable.io/random');
     const data = await res.json();
-    quoteElement.textContent = `"${data.content}" — ${data.author}`;
+    quote.textContent = `"${data.content}" — ${data.author}`;
   } catch {
-    quoteElement.textContent = "Stay positive, work hard, and make it happen.";
+    quote.textContent = "Believe in yourself, and all that you are.";
   }
 }
 
 // Initialize Google Map
-import { initMap } from './scripts/maps.js';
-    // Make the callback globally available for Google Maps API
-    window.initSchoolMap = function() {
-      // Initialize map with school coordinates and info
-      initMap('map', {
-        lat: 0.347596,
-        lng: 32.582520,
-        zoom: 15,
-        title: 'Vocational School',
-        infoHtml: '<strong>Vocational School</strong><br>Kampala, Uganda'
-      });
-    };
+window.initMap = function() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 0.3476, lng: 32.5825 },
+    zoom: 13,
+  });
+  new google.maps.Marker({
+    position: { lat: 0.3476, lng: 32.5825 },
+    map,
+    title: "Vocational School Uganda",
+  });
+};
 
-// Run Functions
 fetchNews();
 fetchQuote();
 buildAttendanceChart();

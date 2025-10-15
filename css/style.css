@@ -1,76 +1,95 @@
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
-  background: #f8fafc;
+  background: #fafafa;
   color: #222;
-  line-height: 1.6;
 }
 
 header, footer {
-  background: #0d6efd;
-  color: white;
+  background: #3c1832;
+  color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 1em 0;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+  background: #3c1832;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 0;
+  gap: 1em;
 }
 
 nav a {
   color: white;
   text-decoration: none;
+  font-weight: 600;
 }
 
-nav a.active, nav a:hover {
-  text-decoration: underline;
+nav a:hover,
+nav a.active {
+  color: #e75480;
 }
 
 main {
-  padding: 1rem;
+  padding: 1em;
 }
 
-section {
-  margin-bottom: 2rem;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
 }
 
-#newsFeed article {
+.card {
   background: white;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  border-left: 5px solid #0d6efd;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
-#contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
-  margin: auto;
-}
-
-#contactForm input, #contactForm textarea, #contactForm button {
-  padding: 0.7rem;
+.card img {
+  width: 100%;
   border-radius: 6px;
-  border: 1px solid #ccc;
 }
 
 button {
-  background-color: #0d6efd;
-  color: white;
+  background: #3c1832;
+  color: #fff;
+  border: none;
+  padding: 0.7em 1em;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0b5ed7;
+  background: #e75480;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.feedback {
+  text-align: center;
+  margin-top: 1em;
 }
 
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
+    text-align: center;
   }
 }

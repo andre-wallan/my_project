@@ -1,13 +1,19 @@
-export function renderAttendanceChart(canvasId, data) {
-  new Chart(document.getElementById(canvasId), {
-    type: 'bar',
+export function buildAttendanceChart() {
+  const ctx = document.getElementById("attendanceChart").getContext("2d");
+  new Chart(ctx, {
+    type: "line",
     data: {
-      labels: data.labels,
-      datasets: [
-        { label: 'Present', data: data.present },
-        { label: 'Absent', data: data.absent }
-      ]
+      labels: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+      datasets: [{
+        label: "Attendance (%)",
+        data: [95, 92, 88, 93, 90],
+        borderWidth: 2,
+        fill: true
+      }]
     },
-    options: { responsive: true, maintainAspectRatio: false }
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true, max: 100 } }
+    }
   });
 }
